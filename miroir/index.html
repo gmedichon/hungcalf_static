@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Le miroir aux trois nombres</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<video poster="images/bg.jpg" playsinline autoplay muted loop>
+					<!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+					<source src="images/bg_animated.webm" type="video/webm">
+				</video>
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Miroir aux trois nombres</h1>
+                                Entrez le mon de la personne: <input id="fname" type="text" name="fname" on><br>
+                                <input type="submit" value="Calculer" onclick="tripoli(document.getElementById('fname').value)">
+
+							</div>
+						</div>
+						<nav>
+							<ul>
+                                <!--<li><a href="#numberse">Catégories</a></li>
+                                <li><a href="#numberse">Nombres</a></li>
+                                <li><a href="#work">Work</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Résultat</h2>
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<p id="results">...</p>
+							</article>
+
+                        <!-- explication -->
+                        <article id="numberse">
+                            <h2 class="major">Explication des nombres</h2>
+                            <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+                            <p>Le nombre d'expression symbolise votre personnalité...</p>
+                            <p>Le nombre intime symbolise vos peurs et désirs...</p>
+                            <p>Le nombre de réalisation symbolise la partie de vous que vous montrez aux autres...</p>
+                        </article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; gmedichon & inoukakis. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function letter_to_number(letter){
+					switch(letter) {
+						case 'a':
+						case 'j':
+						case 's':
+							return 1;
+						case 'b':
+						case 'k':
+						case 't':
+							return 2;
+						case 'c':
+						case 'l':
+						case 'u':
+							return 3;
+						case 'd':
+						case 'm':
+						case 'v':
+							return 4;
+						case 'e':
+						case 'n':
+						case 'w':
+							return 5;
+						case 'f':
+						case 'o':
+						case 'x':
+							return 6;
+						case 'g':
+						case 'p':
+						case 'y':
+							return 7;
+						case 'h':
+						case 'q':
+						case 'z':
+							return 8;
+						case 'i':
+						case 'r':
+							return 9;
+					}
+				}
+
+				function number_signification(number) {
+					switch (number) {
+						case 1:
+							return "Il s’agit du nombre de l’individualité, des loups solitaires. Ceux qui sont sous le signe du chiffre premier sont souvent des chefs ou des inventeurs. Ils sont concentrés et déterminés à arriver à leurs fins! Ils ont aussi du mal à rejoindre une équipe ou de suivre une hiérarchie. On a plus tendance à les voire au sommet de ladite hiérarchie.";
+						case 2:
+							return "Il représente l’interaction, la communication entre les deux parties, la coopération et l’équilibre. Les 2 débordent d'imagination et de créativité. Ce sont de bonnes natures. La paix, l'harmonie, l'engagement, la loyauté et la justice les caractérisent souvent. Mais le 2 implique aussi l'idée de conflit, de forces opposées, d'aspects contradictoires d'une même réalité : le jour et la nuit, le Bien et le Mal. Les 2 sont parfois repliés sur eux-mêmes, lunatiques, timides et indécis.";
+						case 3:
+							return "Ce nombre évoque la complétude, la notion de  'tout', comme dans le trio passe-présent-avenir ou âme-corps-esprit. Les pythagoriciens considéraient le 3 comme le premier nombre 'complet', car lorsqu'on aligne trois pavés sur un chemin, il y a un début un milieu et une fin. Le trois implique talent et énergie : il implique une nature artistique, pleine d'humour et à l’aise en société. Les 3 ont souvent de la chance, de l'aisance et du succès. Mais Ils peuvent aussi éparpiller, s'irriter sans raison ou encore se montrer superficiels.";
+						case 4:
+							return "A l’image d’une montagne immuable, ce chiffre est celui de la stabilité et de la fermeté. Les 4 aiment travailler dur. Ils sont pragmatiques, fiables et ont la tête sur les épaules. Aux accès de folie ils préfèrent la logique et la raison. Ce sont d'excellents organisateurs, qui mènent toujours leurs projets à bien. Comme le cycle des quatre saisons, ils sont plutôt prévisibles. Il leur arrive d'être bornés susceptibles et sujets à des éclats de colère.";
+						case 5:
+							return "C'est le nombre de l'instabilité et du déséquilibre, indicateur de changement et d'incertitude. Les 5 sont ont de l’énergie à revendre ! Ce sont des aventuriers qui n'ont pas peur de prendre des risques. Ils aiment voyager et faire de nouvelles rencontres mais ne restent en général pas très longtemps au même endroit. Les 5 sont parfois vaniteux, irresponsables et impatients.";
+						case 6:
+							return "Ce nombre représente l'harmonie, l'amitié et la vie de famille. Les 6 sont fidèles fiables et amants. Ils s'adaptent facilement. Ils sont doués pour l'enseignement et les arts en général mais n'ont pas toujours du succès dans les affaires. Ils se laissent parfois aller aux ragots ou à la complaisance. Les pythagoriciens considéraient le 6 comme le nombre parfait car il est divisible par 2 et par 3 et qu’il est aussi égal à la somme et au produit des trois premiers nombres (1 + 2 + 3 = 6 et 1 x 2 x 3 = 6).";
+						case 7:
+							return "Sensibles, compréhensifs et brillants les 7 aiment travailler dur et relever des défis. Ils sont souvent sérieux et érudits. Leur intérêt se porte sur tous les sujets mystérieux. Chez eux, l'originalité et l'imagination l'emportent sur l'appât du gain et des biens matériels. Les 7 peuvent aussi se montrer pessimistes, sarcastiques et anxieux. Le 7 est considéré comme un nombre mystique ou magique car on l'associe aux sept jours de la Création et aux sept corps célestes de l'astronomie antique (le Soleil, la Lune, Mercure, Vénus, Mars, Saturne et Jupiter).";
+						case 8:
+							return "Ce nombre augure d'un grand succès dans les affaires, la finance ou la politique. Les 8 sont pragmatiques et fonceurs. Ce sont également des travailleurs acharnés. Ils sont aussi parfois jaloux, envieux, autoritaires et avides de pouvoir. Le 8 est considéré comme le nombre le plus prévisible du cycle ; il peut incarner le sommet de la réussite aussi bien que le fond de l'échec. Dès la naissance, les deux voies s'ouvrent au 8.";
+						case 9:
+							return "Ce nombre symbolise la complétude et la réussite portées à l'extrême. C'est en effet le nombre ' complet ' : (3) multiplié par lui-même (3 x 3 = 9). La vocation des 9 est de se consacrer aux autres, c'est pourquoi ils sont souvent enseignants, chercheurs ou militent dans des organismes humanitaires. Ils ont une volonté de fer et travaillent sans relâche ! Ils sont souvent pour les autres un exemple ou une source d'inspiration.";
+						default:
+							return "Les mystères de ce nombre sont impénétrable (number not found)."
+					}
+				}
+
+				function reduce(score){
+					while(score >= 10){
+						var scoreS = score.toString();
+						score = parseInt(scoreS[0]) + parseInt(scoreS[1]);
+					}
+					return score;
+				}
+
+				function tripoli(input) {
+                    if (!input) {
+                        alert("Veuillez renseigner le nom de l'individu à analyser.");
+                        return;
+                    }
+                    window.location.href = '#intro';
+                    document.getElementById('fname').value ='';
+					var scoreE = 0;
+					var scoreI = 0;
+					var scoreR = 0;
+					var original = input;
+					input = input.toLowerCase().replace(/[^a-z]+/g,'');
+
+					//Expression
+					for (var i = 0; i < input.length; i++) {
+						scoreE += letter_to_number(input[i]);
+					}
+					scoreE = reduce(scoreE);
+
+					//Intime
+					for (var i = 0; i < input.length; i++) {
+						if(input[i] === "a" ||input[i] === "e" ||input[i] === "i" ||input[i] === "o" ||input[i] === "u" ||input[i] === "y")
+							scoreI += letter_to_number(input[i]);
+					}
+					scoreI = reduce(scoreI);
+
+					//Réalisation
+					for (var i = 0; i < input.length; i++) {
+						if(!(input[i] === "a" ||input[i] === "e" ||input[i] === "i" ||input[i] === "o" ||input[i] === "u" ||input[i] === "y"))
+							scoreR += letter_to_number(input[i]);
+					}
+					scoreR = reduce(scoreR);
+
+                    document.getElementById("results").innerHTML  = original + " possède le nombre d'expression: " + scoreE + "<br>"
+                        + number_signification(scoreE) + "<br><br>" +
+                        "Cette personne possède le nombre intime: " + scoreI + "<br>"
+                        + number_signification(scoreI) + "<br><br>" +
+                        "Cette personne possède le nombre de réalisation: " + scoreR + "<br>"
+                        + number_signification(scoreR);
+
+				}
+			</script>
+
+	</body>
+</html>
